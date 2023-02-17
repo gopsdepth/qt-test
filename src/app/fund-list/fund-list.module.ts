@@ -4,6 +4,7 @@ import { FundCardComponent } from './fund-card/fund-card.component';
 import { BadgeComponent } from './badge/badge.component';
 import { RouterModule } from '@angular/router';
 import { FundListPageComponent } from './fund-list-page/fund-list-page.component';
+import { FundListService } from './fund-list.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FundListPageComponent } from './fund-list-page/fund-list-page.component
     CommonModule,
     RouterModule,
   ],
+  providers: [FundListService],
   exports: [
     FundCardComponent,
     BadgeComponent,

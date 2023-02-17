@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FundCardModel } from '../models/fund-card.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class FundListService {
 
   constructor() { }
