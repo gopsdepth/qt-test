@@ -1,1 +1,25 @@
-<p>login-page works!</p>
+<div class="flex">
+    <div class="grid grid-cols-1 w-11/12 md:w-7/12 mx-auto mt-24">
+        <img class="mx-auto my-8" src="/assets/images/logo.png" />
+        <div [ngClass]="isError ? 'block' : 'hidden'">
+            <div class="flex items-center justify-between rounded-lg border-2 border-red-500 text-red-500 bg-red-200 px-4 py-2 my-2">
+                Your credentials is invalid.
+                <button type="button" class="float-right text-sm" (click)="isError = false">&#9587;</button>
+            </div>
+        </div>
+        <input type="email" class="border-b-2 mb-8 px-2 py-1" placeholder="Email" #username />
+        <input type="password" class="border-b-2 mb-8 px-2 py-1" placeholder="Password" #password />
+        <div>
+            <a class="text-sky-600 text-sm hover:underline underline-offset-4" href="#">FORGOT PASSWORD?</a>
+            <button type="button" class="bg-sky-600 text-white text-sm px-4 py-2 float-right" (click)="login(username.value, password.value)">LOGIN</button>
+        </div>
+    </div>
+</div>
+<footer class="absolute flex flex-col md:flex-row items-center md:items-end justify-between bottom-0 left-0 right-0 p-4">
+    <div class="text-gray-400">Powered By <img class="inline align-bottom h-10" src="assets/images/qt-logo.png" /></div>
+    <div>
+        <a class="text-sm hover:underline underline-offset-4" href="#">Contact us</a> |
+        <a class="text-sm hover:underline underline-offset-4" href="#">Terms of Use</a> |
+        <a class="text-sm hover:underline underline-offset-4" href="#">Privacy Policy</a>
+    </div>
+</footer>
