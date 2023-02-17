@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FileManagerPageComponent } from './file-manager-page/file-manager-page.component';
-import { FundListPageComponent } from './fund-list-page/fund-list-page.component';
+import { FundListPageComponent } from './fund-list/fund-list-page/fund-list-page.component';
 import { FundPerformancePageComponent } from './fund-performance-page/fund-performance-page.component';
 import { InvesterSummaryPageComponent } from './invester-summary-page/invester-summary-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
