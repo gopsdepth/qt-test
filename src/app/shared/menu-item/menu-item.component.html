@@ -1,8 +1,8 @@
-<a class="hover:text-amber-500 text-sm" href="#" *ngIf="!menu.children" [ngClass]="menu.isActive ? 'font-bold': ''">
+<a class="hover:text-amber-500 text-sm" href="javascript: void(0);" [routerLink]="menu.routerLink" *ngIf="!menu.children" [ngClass]="menu.isActive ? 'font-bold': ''">
     {{ menu.caption }}
 </a>
 <div *ngIf="!!menu.children">
-    <a href="javascript: void(0);" class="text-sm" (click)="toggleMenu()">
+    <a href="javascript: void(0);" [routerLink]="menu.routerLink" class="text-sm cursor-pointer" (click)="toggleMenu()">
         {{ menu.caption }}
         <i class="fa fa-chevron-down ml-3 text-gray-500" #chevron></i>
     </a>
