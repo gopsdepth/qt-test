@@ -1,0 +1,10 @@
+<div class="rounded-md bg-white border border-gray-200 px-4 py-2 items-stretch h-full">
+    <div class="flex flex-row items-center justify-between">
+        <h2 class="font-bold">Deal allocation [number of assets]</h2>
+        <div>
+            <button type="button" class="rounded-tl-sm rounded-bl-sm border border-blue-800 text-sm px-4 py-1" [ngClass]="getButtonClass('sector')" (click)="buttonClick('sector')">Sector</button>
+            <button type="button" class="rounded-tr-sm rounded-br-sm border border-blue-800 text-sm px-4 py-1" [ngClass]="getButtonClass('industry')" (click)="buttonClick('industry')">Industry</button>
+        </div>
+    </div>
+    <google-chart [type]="chartType" [data]="data" [columns]="chartColumn" [options]="chartOptions" [dynamicResize]="true" style="width: 100%; min-height: 300px; height: 100%;"></google-chart>
+</div>

@@ -10,6 +10,7 @@ import { FundListModule } from './fund-list/fund-list.module';
 import { InvesterSummaryModule } from './invester-summary/invester-summary.module';
 import { SharedModule } from './shared/shared.module';
 import { FundPerformanceModule } from './fund-performance/fund-performance.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FundPerformanceModule } from './fund-performance/fund-performance.modul
     InvesterSummaryModule,
     SharedModule,
     FundPerformanceModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

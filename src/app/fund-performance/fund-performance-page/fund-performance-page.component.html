@@ -1,18 +1,23 @@
-<app-menu-layout [currentPage]="fundUrlId">
+<app-menu-layout [currentPage]="'fund-perf/' + fundUrlId">
     <div class="grid grid-cols-1 space-y-4 p-8">
-        <div class="rounded-md bg-white border border-gray-200 px-10 py-2">
-            <span class="font-bold">Fund performance: GGV USD Fund V</span>
-            <div class="float-right space-x-2">
+        <div class="flex flex-row rounded-md bg-white border border-gray-200 px-10 py-2 items-center justify-between">
+            <span class="font-bold">Fund performance: {{ fundName }}</span>
+            <div>
                 <div class="flex items-center justify-center">
                     <div class="datepicker relative form-floating" data-mdb-toggle-button="false">
-                      <input type="text"
-                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none text-sm"
+                      <input type="text" #dateInput [matDatepicker]="picker" [value]="selectedDate"
+                        class="form-control block w-full px-3 py-1.5 font-normal bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none text-sm text-gray-400"
                         placeholder="Select a date" />
+                        <mat-datepicker-toggle class="absolute top-[-6px] right-0" [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
                     </div>
                 </div>
             </div>
         </div>
         <div class="flex flex-row space-x-1">
+            <app-deal-allocation class="w-5/12" [date]="selectedDate"></app-deal-allocation>
+            <app-investments class="w-7/12" [date]="selectedDate"></app-investments>
         </div>
+        <app-portfolio-summary></app-portfolio-summary>
     </div>
 </app-menu-layout>

@@ -1,0 +1,14 @@
+<div class="rounded-md bg-white border border-gray-200 px-4 py-2 items-stretch h-full">
+    <div class="flex flex-row items-center justify-between space-x-1">
+        <h2 class="font-bold">Investments by quater</h2>
+        <div>
+            <button type="button" class="rounded-sm border border-blue-800 text-sm px-4 py-1 bg-blue-900 text-white">
+                Cumulative investment cost
+            </button>
+            <button type="button" class="rounded-sm border border-blue-800 text-sm px-4 py-1 bg-blue-900 text-white">
+                Cumulative total value
+            </button>
+        </div>
+    </div>
+    <google-chart [type]="chartType" [data]="data" [columns]="chartColumn" [options]="chartOptions" [dynamicResize]="true" style="width: 100%; min-height: 300px; height: 100%;"></google-chart>
+</div>

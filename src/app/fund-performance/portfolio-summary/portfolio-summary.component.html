@@ -1,0 +1,37 @@
+<div class="rounded-md bg-white border border-gray-200 px-4 py-2 overflow-x-scroll items-stretch h-full">
+    <div class="flex flex-row justify-between items-center">
+        <h2 class="font-bold mb-2">Portfolio summary</h2>
+        <div>
+            <span class="text-sm">View by: </span>
+            <button type="button" class="rounded-tl-sm rounded-bl-sm border border-blue-800 text-sm px-4 py-1" [ngClass]="getButtonClass('deal')" (click)="buttonClick('deal')">Deal</button>
+            <button type="button" class="rounded-tr-sm rounded-br-sm border border-blue-800 text-sm px-4 py-1" [ngClass]="getButtonClass('asset')" (click)="buttonClick('asset')">Asset</button>
+        </div>
+    </div>
+    <div class="text-sm font-thin mb-1">Realization and Portfolio Summary in USD Million unless otherwise stated.</div>
+    <table class="border-collapse min-w-full">
+        <thead>
+            <tr>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap" *ngFor="let column of columns">{{ column }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of data">
+                <td class="border-b text-sm p-1 whitespace-nowrap" *ngFor="let col of row">{{ col }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap" colspan="3">Total (excluding management fees and genral expenses)</th>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap">-</th>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap">-</th>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap">{{ '$218.10' }}</th>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap">{{ '$203.10' }}</th>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap">{{ '$70.00' }}</th>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap">{{ '$235.10' }}</th>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap">{{ '$305.10' }}</th>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap">{{ '1.40%' }}</th>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap">{{ '15.30%' }}</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
