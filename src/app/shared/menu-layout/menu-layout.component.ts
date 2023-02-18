@@ -13,8 +13,7 @@ export class MenuLayoutComponent {
   menus: MenuItemModel[] = [];
   @Input() currentPage = '';
 
-  constructor(private readonly menuService: MenuService) {
-  }
+  constructor(private readonly menuService: MenuService) {}
 
   ngOnInit() {
     this.menus = this.menuService.getMenu();

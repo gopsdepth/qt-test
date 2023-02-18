@@ -27,6 +27,8 @@ export class ValueCreationCardComponent {
     responsive: true,
     legend: { position: 'top', alignment: 'start' },
     colors: ['#107FC9', '#0E4EAD'],
+    vAxis: { textPosition: 'none' },
+    chartArea: { left: 0, right: 0 },
     isStacked: true,
   };
 
