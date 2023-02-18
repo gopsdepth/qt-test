@@ -1,0 +1,14 @@
+<a class="hover:text-amber-500 text-sm" href="#" *ngIf="!menu.children" [ngClass]="menu.isActive ? 'font-bold': ''">
+    {{ menu.caption }}
+</a>
+<div *ngIf="!!menu.children">
+    <a href="javascript: void(0);" class="text-sm" (click)="toggleMenu()">
+        {{ menu.caption }}
+        <i class="fa fa-chevron-down ml-3 text-gray-500" #chevron></i>
+    </a>
+    <ul class="space-y-5 overflow-hidden max-h-0 transition-[max-height,padding-top] duration-500" #menuList>
+        <li class="pl-4" *ngFor="let submenu of menu.children">
+            <app-menu-item [menu]="submenu"></app-menu-item>
+        </li>
+    </ul>
+</div>
