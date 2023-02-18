@@ -1,0 +1,15 @@
+<div class="rounded-md bg-white border border-gray-200 px-10 py-2 overflow-x-scroll items-stretch h-full">
+    <h2 class="font-bold mb-2">Aggregated overview</h2>
+    <table class="border-collapse min-w-full">
+        <thead>
+            <tr>
+                <th class="border border-blue-900 text-sm bg-blue-800 text-white p-1 whitespace-nowrap" *ngFor="let column of columns">{{ column }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of data">
+                <td class="border-b text-sm p-1 whitespace-nowrap" *ngFor="let col of row">{{ col }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

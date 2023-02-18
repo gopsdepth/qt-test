@@ -1,3 +1,21 @@
 <app-menu-layout [currentPage]="'invest-summary'">
-
+    <div class="grid grid-cols-1 space-y-4 p-8">
+        <div class="rounded-md bg-white border border-gray-200 px-10 py-2">
+            <span class="font-bold">Asia Alternatives Summary</span>
+            <div class="float-right space-x-2">
+                <select class="text-sm rounded-sm border border-gray-200 text-gray-400 px-2 py-1">
+                    <option *ngFor="let option of currencyOptions" [value]="option">{{ option }}</option>
+                </select>
+                <select class="text-sm rounded-sm border border-gray-200 text-gray-400 px-2 py-1"
+                    #quater (change)="selectedQuater = quater.value">
+                    <option *ngFor="let option of quaterOptions" [value]="option">{{ option }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="flex flex-row space-x-1">
+            <app-value-creation-card class="w-7/12" [quater]="selectedQuater"></app-value-creation-card>
+            <app-aggregated-card class="w-5/12" [quater]="selectedQuater"></app-aggregated-card>
+        </div>
+        <app-performance-card [quater]="selectedQuater"></app-performance-card>
+    </div>
 </app-menu-layout>

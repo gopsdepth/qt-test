@@ -19,8 +19,6 @@ export class MenuLayoutComponent {
   ngOnInit() {
     this.menus = this.menuService.getMenu();
     this.menus.forEach((menu) => {
-      console.log(menu.id);
-      console.log(this.currentPage);
       menu.isActive = this.currentPage.includes(menu.id);
       menu.children?.forEach((subMenu) => {
         subMenu.isActive = this.currentPage.includes(subMenu.id);
